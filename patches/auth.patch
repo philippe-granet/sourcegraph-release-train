@@ -66,8 +66,8 @@ new file mode 100644
 +	}
 +}
 diff --git a/cmd/frontend/shared/service.go b/cmd/frontend/shared/service.go
---- cmd/frontend/shared/service.go
-+++ cmd/frontend/shared/service.go
+--- a/cmd/frontend/shared/service.go
++++ b/cmd/frontend/shared/service.go
 @@ -3,8 +3,9 @@
  
  import (
