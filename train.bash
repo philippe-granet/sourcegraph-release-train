@@ -32,6 +32,10 @@ git checkout "tags/$tag" -b "$tag-release-branch-$docker_username"
 if [ 'Linux' == "$(uname -s)" ]; then
   sudo apt-get install musl-tools
 fi
+if [ -d ../patches ] ; then
+  echo "====================================== Apply git patches ======================================"
+  git apply ../patches/*
+fi
 
 cd cmd/server
 ./pre-build.sh
