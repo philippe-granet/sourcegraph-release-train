@@ -1,0 +1,3 @@
+# Desactive toute conversion automatique de fin de ligne par Git
+* -text
+* eol=lf
