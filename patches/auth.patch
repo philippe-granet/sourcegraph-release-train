@@ -2,7 +2,7 @@ diff --git a/cmd/frontend/auth/providers/httpauth/provider.go b/cmd/frontend/aut
 new file mode 100644
 --- /dev/null
 +++ b/cmd/frontend/auth/providers/httpauth/provider.go
-@@ -0,0 +1,63 @@
+@@ -0,0 +1,62 @@
 +package httpauth
 +
 +import (
@@ -65,3 +65,28 @@ new file mode 100644
 +		})
 +	}
 +}
+diff --git a/cmd/frontend/shared/service.go b/cmd/frontend/shared/service.go
+--- cmd/frontend/shared/service.go
++++ cmd/frontend/shared/service.go
+@@ -3,8 +3,9 @@
+ 
+ import (
+ 	"context"
+ 
++	"github.com/sourcegraph/sourcegraph/cmd/frontend/auth/providers/httpauth"
+ 	"github.com/sourcegraph/sourcegraph/cmd/frontend/enterprise"
+ 	"github.com/sourcegraph/sourcegraph/cmd/frontend/internal/cli"
+ 	"github.com/sourcegraph/sourcegraph/internal/conf/conftypes"
+ 	"github.com/sourcegraph/sourcegraph/internal/database"
+@@ -23,9 +24,10 @@
+ 	return nil, nil
+ }
+ 
+ func (svc) Start(ctx context.Context, observationCtx *observation.Context, ready service.ReadyFunc, config env.Config) error {
+-	ossSetupHook := func(_ database.DB, _ conftypes.UnifiedWatchable) enterprise.Services {
++	ossSetupHook := func(db database.DB, _ conftypes.UnifiedWatchable) enterprise.Services {
++		httpauth.Init(db)
+ 		return enterprise.DefaultServices()
+ 	}
+ 	return CLIMain(ctx, observationCtx, ready, ossSetupHook)
+ }
