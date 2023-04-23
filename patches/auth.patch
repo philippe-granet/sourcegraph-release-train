@@ -79,7 +79,7 @@ diff --git a/cmd/frontend/shared/service.go b/cmd/frontend/shared/service.go
  	"github.com/sourcegraph/sourcegraph/internal/conf/conftypes"
  	"github.com/sourcegraph/sourcegraph/internal/database"
 @@ -23,9 +24,10 @@
- 	return nil, nil
+ 	return nil, GRPCWebUIDebugEndpoints()
  }
  
  func (svc) Start(ctx context.Context, observationCtx *observation.Context, ready service.ReadyFunc, config env.Config) error {
