@@ -1,8 +1,8 @@
 # sourcegraph-oss-release-train
 
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/philippe-granet/sourcegraph-server-oss?sort=semver)][docker_hub]
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/philippe-granet/sourcegraph-server-oss?sort=semver)][docker_hub]
-![Docker Pulls](https://img.shields.io/docker/pulls/philippe-granet/sourcegraph-server-oss)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/philippegranet/sourcegraph-server-oss?sort=semver)][docker_hub]
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/philippegranet/sourcegraph-server-oss?sort=semver)][docker_hub]
+![Docker Pulls](https://img.shields.io/docker/pulls/philippegranet/sourcegraph-server-oss)
 
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/sourcegraph/server?color=orange&label=sourcegraph%20enterprise%20version&logo=sourcegraph&sort=semver)][docker_sg]
 ![Docker Pulls](https://img.shields.io/docker/pulls/sourcegraph/server?color=orange&label=enterprise%20docker%20pulls&logo=docker)
@@ -42,6 +42,6 @@ services:
       - .sourcegraph/site-conf:/root
 ```
 
-[docker_hub]: https://hub.docker.com/r/philippe-granet/sourcegraph-server-oss/tags?page=1&ordering=last_updated
+[docker_hub]: https://hub.docker.com/r/philippegranet/sourcegraph-server-oss/tags?page=1&ordering=last_updated
 [gh_actions]: https://github.com/philippe-granet/sourcegraph-release-train/actions/workflows/release_train.yml
 [docker_sg]: https://hub.docker.com/r/sourcegraph/server
